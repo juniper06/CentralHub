@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-box{
+    position: fixed;
+    border: white 1px solid;
+    height: 205px;
+    width: 221px;
+    opacity: .2;
+}
+
+.bg-box:nth-child(1){
+    top: -30px;
+    left: 400px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(2){
+    top: 166px;
+    left: 820px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(3) {
+    top: 296px;
+    left: 1200px;
+    width: 446px;
+    height: 323px;
+}
+
+
+
+.bg-box:nth-child(4) {
+    top: -200px;
+    left: 1300px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(5){
+    top: 500px;
+    left: 450px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(6){
+    width: 446px;
+    height: 323px;
+    top: 80px;
+    left: 100px;
+}
+
+.bg-box:nth-child(7){
+    width: 446px;
+    height: 323px;
+    top: 700px;
+    left: 100px;
+}
+
+.bg-box:nth-child(8) {
+    width: 446px;
+    height: 500px;
+    top: 300px;
+    left: -100px;
+}
+
+.bg-box:nth-child(9){
+    width: 446px;
+    height: 323px;
+    top: 50px;
+    left: 1100px;
+}
+
+.bg-box:nth-child(10) {
+    width: 446px;
+    height: 323px;
+    top: 50px;
+    left: 1800px;
+}
+
+.bg-box:nth-child(11) {
+    width: 446px;
+    height: 323px;
+    top: 500px;
+    left: 1600px;
+}
+
+.bg-box:nth-child(12) {
+    width: 446px;
+    height: 323px;
+    top: 600px;
+    left: 1000px;
+}
+
+.bg-box:nth-child(13) {
+    width: 446px;
+    height: 323px;
+    top: 800px;
+    left: 1300px;
+}
+
+main{
+    background-size: cover;
+    background: linear-gradient(to right, rgba(174, 123, 173, 1), rgba(58, 6, 39, 1));
+    height: 100vh;
+}
+
+.login-box{
+    background: #D2D2D2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 50%;
+    border-radius: 40px;
+}
+
+.left-component{
+    float: left;
+    height: 100%;
+    width: 60%;
+    border-top-left-radius: 39px;
+    border-bottom-left-radius: 39px;
+    background: linear-gradient(to right, rgba(141, 73, 116, 1), rgba(187, 110, 186, 1));
+    flex-direction: column;
+    box-shadow: 7px 0 1px 0px #00000030;
+    position:relative;
+}
+
+.left-component img{
+    height: 85%;
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.left-component p{
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    padding: 5px;
+}
+
+.right-component{
+    float: right;
+    width: 40%;
+    height: 100%;
+    border-top-right-radius: 39px;
+    border-bottom-right-radius: 39px;
+    background-color: #D2D2D2;
+    flex-direction: column;
+}
+
+#welcome-message{
+    background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
+    width: 50%;
+    height: 12%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    text-align: center;
+    justify-items: center;
+    padding-top: 5px;
+    color: white;
+}
+
+.right-component h4{
+    text-align: center;
+    color: #703F5E;
+    margin-bottom: 40px;
+    font-size: 22px;
+}
+
+.right-component form{
+    text-align: center;
+    height: 60%;
+}
+
+.right-component input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #63254C;
+    padding-bottom: 7px;
+    padding-left: 3px;
+    font-size: 17px;
+    color: #703F5E;
+}
+
+input::placeholder{
+    color: #703F5E;
+}
+
+form #forgot-password{
+    border: none;
+    background-color: transparent;
+    color: #703F5E;
+    font-style: italic;
+    font-size: 12px;
+    border-bottom: 1px solid #63254C;
+    margin-top: 10px;
+    float: right;
+    margin-right: 63px;
+    cursor: pointer;
+}
+
+form #btn-login{
+    background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
+    width: 50%;
+    height: 20%;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    justify-self: center;
+    cursor: pointer;
+}
+
+form #btn-create{
+    background: transparent;
+    border: none;
+    color: #703F5E;
+    font-size: 18px;
+    margin-top: 40px;
+    cursor: pointer;
+}

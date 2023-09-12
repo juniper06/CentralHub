@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+:root {
+    --lightgray: #5D5C61;
+    --darkgray: #37968323;
+    --lightblue: #7395AE;
+    --darkblue: #557a95b2;
+    --lightbrown: #B1A296;
+}
+
+.nav-container{
+    position: fixed;
+    width: 100%;
+}
+
+.navbar{
+    display: grid;
+    grid-template-columns: 0.2fr auto 1fr;
+    align-items: center;
+    height: 80px;
+    width: 90%;
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+#navbar-logo{
+    font-size: 2rem;
+    color: white;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    list-style: none;
+    text-align: center;
+    width: 70%;
+    justify-self: end;
+    font-size: 1.5rem;
+}
+
+.nav-links{
+    color: white;
+    text-decoration: none;
+}
+
+.main{
+    background-size: cover;
+    height: 100vh;
+    background-image:
+    linear-gradient(to right, rgba(59, 59, 66, 0.808), rgba(117, 19, 93, 0.575)),
+    url(images/background.avif);
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    width: 80%;
+    margin: 0 auto;
+    height: 90vh;
+}
+
+.main-content{
+    justify-self: start;
+    margin-left: 50px;
+    color: white;
+    width: 80%;
+
+}
+
+main.content{
+    justify-self: start;
+    margin-left: 20px;
+    width: 80%;
+}
+
+.main-content h1{
+    font-size: 5rem;
+}
+
+.main-content p{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    padding-bottom: 50px;
+}
+
+.main-img-container{
+    text-align: center;
+}
+
+.main-content-right{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-btn{
+    margin-left: 150px;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    border-color: white;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
