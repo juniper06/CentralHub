@@ -125,6 +125,7 @@ main {
     width: 920px;
     border-radius: 50px;
     outline: 5px;
+    box-shadow: 2px 0 2px 5px #0000002f;
 }
 
 .left-container{
