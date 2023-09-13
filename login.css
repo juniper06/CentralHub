@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-.bg-box{
+.bg-box {
     position: fixed;
     border: white 1px solid;
     height: 205px;
@@ -12,14 +12,14 @@
     opacity: .2;
 }
 
-.bg-box:nth-child(1){
+.bg-box:nth-child(1) {
     top: -30px;
     left: 400px;
     width: 446px;
     height: 323px;
 }
 
-.bg-box:nth-child(2){
+.bg-box:nth-child(2) {
     top: 166px;
     left: 820px;
     width: 446px;
@@ -42,21 +42,21 @@
     height: 323px;
 }
 
-.bg-box:nth-child(5){
+.bg-box:nth-child(5) {
     top: 500px;
     left: 450px;
     width: 446px;
     height: 323px;
 }
 
-.bg-box:nth-child(6){
+.bg-box:nth-child(6) {
     width: 446px;
     height: 323px;
     top: 80px;
     left: 100px;
 }
 
-.bg-box:nth-child(7){
+.bg-box:nth-child(7) {
     width: 446px;
     height: 323px;
     top: 700px;
@@ -70,7 +70,7 @@
     left: -100px;
 }
 
-.bg-box:nth-child(9){
+.bg-box:nth-child(9) {
     width: 446px;
     height: 323px;
     top: 50px;
@@ -105,134 +105,142 @@
     left: 1300px;
 }
 
-main{
-    background-size: cover;
-    background: linear-gradient(to right, rgba(174, 123, 173, 1), rgba(58, 6, 39, 1));
+body{
     height: 100vh;
+    background: linear-gradient(to right, rgba(174, 123, 173, 1), rgba(58, 6, 39, 1));
 }
 
-.login-box{
-    background: #D2D2D2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 45%;
+main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
     height: 50%;
-    border-radius: 40px;
+    width: 45%;
+    background: #D2D2D2;
+    border-radius: 50px;
+    display: flex;
 }
 
-.left-component{
-    float: left;
+.left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 100%;
     width: 60%;
-    border-top-left-radius: 39px;
-    border-bottom-left-radius: 39px;
     background: linear-gradient(to right, rgba(141, 73, 116, 1), rgba(187, 110, 186, 1));
-    flex-direction: column;
+    border-top-left-radius: 49px;
+    border-bottom-left-radius: 49px;
     box-shadow: 7px 0 1px 0px #00000030;
-    position:relative;
 }
 
-.left-component img{
+.left-container img{
     height: 85%;
     width: 95%;
-    margin-left: 10px;
-    margin-right: 10px;
+    object-fit: contain;
 }
 
-.left-component p{
-    color: white;
-    text-align: center;
+.left-container p{
+    color: #FFFFFF;
     font-size: 17px;
-    padding: 5px;
 }
 
-.right-component{
-    float: right;
-    width: 40%;
+.right-container{
     height: 100%;
-    border-top-right-radius: 39px;
-    border-bottom-right-radius: 39px;
-    background-color: #D2D2D2;
+    width: 40%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
     flex-direction: column;
 }
 
-#welcome-message{
+.right-container #welcome-message{
+    display: flex;
     background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
     width: 50%;
     height: 12%;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     border-top-right-radius: 45px;
     border-bottom-right-radius: 45px;
     text-align: center;
     justify-items: center;
     padding-top: 5px;
     color: white;
+    padding-bottom: 5px;
 }
 
-.right-component h4{
-    text-align: center;
+#welcome-message h3{
+    display: flex;
+    flex: auto;
+}
+
+.right-container h4 {
     color: #703F5E;
-    margin-bottom: 40px;
     font-size: 22px;
-}
-
-.right-component form{
     text-align: center;
-    height: 60%;
+    margin-bottom: 35px;
 }
 
-.right-component input{
+.right-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.right-container form input{
+    display: flex;
     outline: none;
     border: none;
     background-color: transparent;
-    border-bottom: 1px solid #63254C;
+    border-bottom: 2px solid #63254C;
     padding-bottom: 7px;
     padding-left: 3px;
     font-size: 17px;
     color: #703F5E;
 }
 
-input::placeholder{
+input::placeholder {
     color: #703F5E;
+    display: flex;
 }
 
-form #forgot-password{
+form #forgot-password {
     border: none;
     background-color: transparent;
     color: #703F5E;
     font-style: italic;
-    font-size: 12px;
+    font-size: 14px;
     border-bottom: 1px solid #63254C;
-    margin-top: 10px;
-    float: right;
-    margin-right: 63px;
     cursor: pointer;
+    margin-left: 105px;
 }
 
-form #btn-login{
+form #btn-login {
     background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
-    width: 50%;
-    height: 20%;
     border-radius: 50px;
     border: none;
     color: white;
     font-size: 20px;
-    margin-top: 25px;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
-    justify-self: center;
+    height: 60px;
+    width: 170px;
     cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
-form #btn-create{
+form #btn-create {
+    display: flex;
     background: transparent;
     border: none;
     color: #703F5E;
     font-size: 18px;
-    margin-top: 40px;
     cursor: pointer;
 }
