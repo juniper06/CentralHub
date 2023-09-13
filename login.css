@@ -10,6 +10,7 @@
     height: 205px;
     width: 221px;
     opacity: .2;
+    z-index: -1;
 }
 
 .bg-box:nth-child(1) {
@@ -32,8 +33,6 @@
     width: 446px;
     height: 323px;
 }
-
-
 
 .bg-box:nth-child(4) {
     top: -200px;
@@ -119,7 +118,7 @@ main{
 
 .container{
     width: 920px;
-    background: #D2D2D2;
+    background: #d1d1d1;
     border-radius: 50px;
     display: flex;
 }
@@ -132,7 +131,7 @@ main{
     text-align: center;
     height: 100%;
     width: 60%;
-    background: linear-gradient(to right, rgba(141, 73, 116, 1), rgba(187, 110, 186, 1));
+    background: linear-gradient(to right, rgb(141, 73, 116), rgb(187, 110, 186));
     border-top-left-radius: 49px;
     border-bottom-left-radius: 49px;
     box-shadow: 7px 0 1px 0px #00000030;
