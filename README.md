@@ -40,3 +40,8 @@ Before you begin, make sure you have the following prerequisites installed on yo
    2. ```commandline
       python manage.py createsuperuser
       ```
+
+5. **Run the Server**
+   ```commandline
+   python manage.py runserver
+   ```
