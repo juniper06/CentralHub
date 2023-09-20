@@ -15,25 +15,26 @@ Before you begin, make sure you have the following prerequisites installed on yo
     cd CentralHub
     ```
 
-2. **Create and Run Virtual Environment**
+2. **Create Virtual Environment**
+   
+   **_NOTE:_**: if you haven't installed virtual environment in python or skip this command if you already installed
     ```commandline
      pip install virtualenv
      ```
-    **_NOTE:_**: if you haven't installed virtual environment in python or skip this command if you already installed
-     1. ```commandline
-        python -m venv .venv
-        ```
-        
-     2.  ```commandline
-         .venv\Scripts\activate
-         ```
+3.   **Activate Virtual Environment**
+     ```commandline
+     python -m venv .venv
+     ```
+     ```commandline
+     .venv\Scripts\activate
+     ```
          
-3. **Install Django**
+4. **Install Django**
    ```commandline
    pip install django
    ```
    
-4. **Setup before run the server**
+5. **Setup before run the server**
    1. ```commandline
       python manage.py migrate
       ```
@@ -41,7 +42,7 @@ Before you begin, make sure you have the following prerequisites installed on yo
       python manage.py createsuperuser
       ```
 
-5. **Run the Server**
+6. **Run the Server**
    ```commandline
    python manage.py runserver
    ```
