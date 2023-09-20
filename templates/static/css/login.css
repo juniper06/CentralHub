@@ -104,19 +104,19 @@
     left: 1300px;
 }
 
-body{
+body {
     height: 100vh;
     background: linear-gradient(to right, rgba(174, 123, 173, 1), rgba(58, 6, 39, 1));
 }
 
-main{
+main {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container{
+.container {
     box-shadow: 4px 0 1px 3px #0000002f;
     width: 920px;
     background: #d1d1d1;
@@ -124,7 +124,7 @@ main{
     display: flex;
 }
 
-.left-container{
+.left-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,19 +138,19 @@ main{
     box-shadow: 7px 0 1px 0px #00000030;
 }
 
-.left-container img{
+.left-container img {
     height: 85%;
     width: 95%;
     object-fit: contain;
 }
 
-.left-container p{
+.left-container p {
     color: #FFFFFF;
     font-size: 17px;
     margin: 5px;
 }
 
-.right-container{
+.right-container {
     height: 100%;
     width: 40%;
     border-top-right-radius: 50px;
@@ -159,7 +159,7 @@ main{
     flex-direction: column;
 }
 
-.right-container #welcome-message{
+.right-container #welcome-message {
     display: flex;
     background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
     width: 50%;
@@ -175,7 +175,7 @@ main{
     padding-bottom: 5px;
 }
 
-#welcome-message h3{
+#welcome-message h3 {
     display: flex;
     flex: auto;
 }
@@ -187,7 +187,7 @@ main{
     margin-bottom: 35px;
 }
 
-.right-container form{
+.right-container form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,7 +195,7 @@ main{
     z-index: 5;
 }
 
-.right-container form input{
+.right-container form input {
     display: flex;
     outline: none;
     border: none;
@@ -223,7 +223,7 @@ form #forgot-password {
     justify-self: right;
 }
 
-.btn-forgot{
+.btn-forgot {
     width: 100%;
     display: flex;
     justify-content: right;
@@ -235,18 +235,18 @@ form #forgot-password {
     padding-left: 3px;
 }
 
-.error_messages{
+.error_messages {
     margin: 20px 0 0 0
 }
 
-.btn-login{
+.btn-login {
     padding-top: 40px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.btn-login button{
+.btn-login button {
     border: none;
     color: white;
     background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
@@ -257,7 +257,7 @@ form #forgot-password {
     cursor: pointer;
 }
 
-.btn-create{
+.btn-create {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -272,4 +272,38 @@ form #forgot-password {
     font-size: 22px;
     cursor: pointer;
     text-decoration: none;
+}
+
+.messages{
+    width: 920px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+}
+
+.alert {
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background-color: #2eb886; /* Red */
+}
+
+.alert-error {
+    background-color: #f44336;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }

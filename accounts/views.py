@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
@@ -19,7 +20,8 @@ def login_view(request):
         user = authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(request.GET.get('next', '/'))
+            messages.success(request, "Successfully logged In")
+            return HttpResponseRedirect(request.GET.get('next', '/profile'))
         else:
             context["error_messages"] = ["Invalid Username or Passwords"]
 
@@ -28,6 +30,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
+    messages.success(request, "Successfully logged out")
     return redirect("login")
 
 
@@ -38,6 +41,7 @@ def register_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Successfully created an account")
             return redirect("login")
     else:
         form = UserCreationForm()

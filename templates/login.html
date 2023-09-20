@@ -24,6 +24,16 @@
 <div class="bg-box"></div>
 <main>
     <div class="container">
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags == 'error' %}alert-danger {% else %}alert-success {% endif %}">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
         <div class="left-container">
             <img src="{% static 'images/bg-left.png' %}" alt=""/>
             <p>
@@ -37,6 +47,8 @@
                 <h3>Welcome to CentralHub</h3>
             </div>
             <h4>Login your account</h4>
+
+
             <form method="post">
                 {% csrf_token %}
                 <input

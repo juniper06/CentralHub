@@ -1,69 +1,78 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
     </style>
-    <link rel="stylesheet" href="{% static 'css/userProfile.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/userProfile.css' %}"/>
     <title>User Profile</title>
-  </head>
-  <body>
-    <main>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="bg-box"></div>
-      <div class="container">
+</head>
+<body>
+<main>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="bg-box"></div>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags == 'error' %}alert-danger {% else %}alert-success {% endif %}">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
         <div class="small-container">
-          <h1>Profile</h1>
-          <div class="logout-btn">
-            <a href="{% url 'logout' %}">Logout</a>
-          </div>
+            <h1>Profile</h1>
+            <div class="logout-btn">
+                <a href="{% url 'landing_page' %}">Home</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
         </div>
         <div class="user-info">
-          <div class="full-name-container">
-            <form action="#" id="form1">
-              <div class="divider">
-                <label for="fname">First name</label><br /><br />
-                <input type="text" id="fname" name="fname" value="{{ user.first_name }}" />
-              </div>
-              <div class="divider">
-                <label for="lname">Last name</label><br /><br />
-                <input type="text" id="lname" name="lname" value="{{ user.last_name }}" />
-              </div>
-            </form>
-          </div>
-          <div class="line-divider"></div>
-          <div class="username-container">
-            <form action="#" id="form2">
-              <div class="divider">
-                <label for="email">EMAIL</label><br /><br />
-                <input type="email" id="email" name="email"  value="{{ user.email }}"/>
-              </div>
-              <div class="divider">
-                <label for="last-login">LAST LOGIN</label><br />
-                <div id="date"><label for="#">{{ user.last_login }}</label></div>
-              </div>
-            </form>
-          </div>
-          <div class="btn-save">
-            <button><a href="#">SAVE</a></button>
-          </div>
+            <div class="full-name-container">
+                <form action="#" id="form1">
+                    <div class="divider">
+                        <label for="fname">First name</label><br/><br/>
+                        <input type="text" id="fname" name="fname" value="{{ user.first_name }}"/>
+                    </div>
+                    <div class="divider">
+                        <label for="lname">Last name</label><br/><br/>
+                        <input type="text" id="lname" name="lname" value="{{ user.last_name }}"/>
+                    </div>
+                </form>
+            </div>
+            <div class="line-divider"></div>
+            <div class="username-container">
+                <form action="#" id="form2">
+                    <div class="divider">
+                        <label for="email">EMAIL</label><br/><br/>
+                        <input type="email" id="email" name="email" value="{{ user.email }}"/>
+                    </div>
+                    <div class="divider">
+                        <label for="last-login">LAST LOGIN</label><br/>
+                        <div id="date"><label for="#">{{ user.last_login }}</label></div>
+                    </div>
+                </form>
+            </div>
+            <div class="btn-save">
+                <button><a href="#">SAVE</a></button>
+            </div>
         </div>
-      </div>
-    </main>
-  </body>
+    </div>
+</main>
+</body>
 </html>
