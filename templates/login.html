@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+    <title>Document</title>
+</head>
+<body>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<div class="bg-box"></div>
+<main>
+    <div class="container">
+        <div class="left-container">
+            <img src="{% static 'images/bg-left.png' %}" alt=""/>
+            <p>
+                "Empowering your digital journey with seamless access, secure
+                connections, and a world of possibilities – where ideas come to
+                life."
+            </p>
+        </div>
+        <div class="right-container">
+            <div id="welcome-message">
+                <h3>Welcome to CentralHub</h3>
+            </div>
+            <h4>Login your account</h4>
+            <form method="post">
+                {% csrf_token %}
+                <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email Address"
+                /><br/><br/><br/>
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                /><br/>
+                <div class="btn-forgot">
+                    <button id="forgot-password">Forgot Password?</button>
+                </div>
+                <div class="error_messages">
+                    {% for message in error_messages %}
+                        <p class="error_message">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                <div class="btn-login">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="btn-create">
+                    <a href="{% url 'register' %}">Create Account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

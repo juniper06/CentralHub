@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{% static 'css/landing_page.css' %}" type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Central Hub</title>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <h1 id="navbar-logo">CentralHub</h1>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-links">Home</a></li>
+                <li><a href="#" class="nav-links">Shop</a></li>
+                <li><a href="#" class="nav-links">About</a></li>
+                <li><a href="#" class="nav-links">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main">
+        <div class="main-container">
+            <div class="main-content">
+                <h1>CentralHub</h1>
+                <p>Your online destination for all things fashion and personal
+                    expression. Style Unveiled: Where Fashion Finds You – Discover Your Signature Look in Every Click, Elevating Your Wardrobe with Elegance and Ease.
+                </p>
+                <a href="{% url 'register' %}" class="signup-btn">Get started</a>
+            </div>
+            <div class="main-content-right">
+                <img src="{% static 'images/shopping-img.svg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

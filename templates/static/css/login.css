@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-box {
+    position: fixed;
+    border: white 1px solid;
+    height: 205px;
+    width: 221px;
+    opacity: .2;
+    z-index: -1;
+}
+
+.bg-box:nth-child(1) {
+    top: -30px;
+    left: 400px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(2) {
+    top: 166px;
+    left: 820px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(3) {
+    top: 296px;
+    left: 1200px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(4) {
+    top: -200px;
+    left: 1300px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(5) {
+    top: 500px;
+    left: 450px;
+    width: 446px;
+    height: 323px;
+}
+
+.bg-box:nth-child(6) {
+    width: 446px;
+    height: 323px;
+    top: 80px;
+    left: 100px;
+}
+
+.bg-box:nth-child(7) {
+    width: 446px;
+    height: 323px;
+    top: 700px;
+    left: 100px;
+}
+
+.bg-box:nth-child(8) {
+    width: 446px;
+    height: 500px;
+    top: 300px;
+    left: -100px;
+}
+
+.bg-box:nth-child(9) {
+    width: 446px;
+    height: 323px;
+    top: 50px;
+    left: 1100px;
+}
+
+.bg-box:nth-child(10) {
+    width: 446px;
+    height: 323px;
+    top: 50px;
+    left: 1800px;
+}
+
+.bg-box:nth-child(11) {
+    width: 446px;
+    height: 323px;
+    top: 500px;
+    left: 1600px;
+}
+
+.bg-box:nth-child(12) {
+    width: 446px;
+    height: 323px;
+    top: 600px;
+    left: 1000px;
+}
+
+.bg-box:nth-child(13) {
+    width: 446px;
+    height: 323px;
+    top: 800px;
+    left: 1300px;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to right, rgba(174, 123, 173, 1), rgba(58, 6, 39, 1));
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    box-shadow: 4px 0 1px 3px #0000002f;
+    width: 920px;
+    background: #d1d1d1;
+    border-radius: 50px;
+    display: flex;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to right, rgb(141, 73, 116), rgb(187, 110, 186));
+    border-top-left-radius: 49px;
+    border-bottom-left-radius: 49px;
+    box-shadow: 7px 0 1px 0px #00000030;
+}
+
+.left-container img{
+    height: 85%;
+    width: 95%;
+    object-fit: contain;
+}
+
+.left-container p{
+    color: #FFFFFF;
+    font-size: 17px;
+    margin: 5px;
+}
+
+.right-container{
+    height: 100%;
+    width: 40%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-container #welcome-message{
+    display: flex;
+    background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
+    width: 50%;
+    height: 12%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+    text-align: center;
+    justify-items: center;
+    padding-top: 5px;
+    color: white;
+    padding-bottom: 5px;
+}
+
+#welcome-message h3{
+    display: flex;
+    flex: auto;
+}
+
+.right-container h4 {
+    color: #703F5E;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.right-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.right-container form input{
+    display: flex;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #63254C;
+    padding-bottom: 7px;
+    padding-left: 3px;
+    font-size: 17px;
+    color: #703F5E;
+}
+
+input::placeholder {
+    color: #703F5E;
+    display: flex;
+}
+
+form #forgot-password {
+    border: none;
+    background-color: transparent;
+    color: #703F5E;
+    font-style: italic;
+    font-size: 14px;
+    border-bottom: 1px solid #63254C;
+    cursor: pointer;
+    justify-self: right;
+}
+
+.btn-forgot{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-right: 74px;
+}
+
+.error_message {
+    color: red;
+    padding-left: 3px;
+}
+
+.error_messages{
+    margin: 20px 0 0 0
+}
+
+.btn-login{
+    padding-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-login button{
+    border: none;
+    color: white;
+    background: linear-gradient(to right, rgba(99, 37, 76, 1), rgba(174, 123, 173, 1));
+    border-radius: 50px;
+    font-size: 20px;
+    height: 60px;
+    width: 170px;
+    cursor: pointer;
+}
+
+.btn-create{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.btn-create a {
+    display: flex;
+    background: transparent;
+    border: none;
+    color: #703F5E;
+    font-size: 22px;
+    cursor: pointer;
+    text-decoration: none;
+}
