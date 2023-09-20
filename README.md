@@ -8,9 +8,35 @@ Before you begin, make sure you have the following prerequisites installed on yo
 
 ## Installation Steps
 
-1. **Clone the repository:**
-```
-git clone --branch backend https://github.com/juniper06/CentralHub.git
-```
-2. **cd
 
+1. **Clone the repository:**
+    ```commandline
+    git clone --branch backend https://github.com/juniper06/CentralHub.git
+    cd CentralHub
+    ```
+
+2. **Create and Run Virtual Environment**
+    ```commandline
+     pip install virtualenv
+     ```
+    **_NOTE:_**: if you haven't installed virtual environment in python or skip this command if you already installed
+     1. ```commandline
+        python -m venv .venv
+        ```
+        
+     2.  ```commandline
+         .venv\Scripts\activate
+         ```
+         
+3. **Install Django**
+   ```commandline
+   pip install django
+   ```
+   
+4. **Setup before run the server**
+   1. ```commandline
+      python manage.py migrate
+      ```
+   2. ```commandline
+      python manage.py createsuperuser
+      ```
