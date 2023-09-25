@@ -47,11 +47,11 @@
                 <form action="#" id="form1">
                     <div class="divider">
                         <label for="fname">First name</label><br/><br/>
-                        <input type="text" id="fname" name="fname" value="{{ user.first_name }}"/>
+                        <div class="date"><label for="#">{{ user.first_name }}</label></div>
                     </div>
                     <div class="divider">
                         <label for="lname">Last name</label><br/><br/>
-                        <input type="text" id="lname" name="lname" value="{{ user.last_name }}"/>
+                        <div class="date"><label for="#">{{ user.last_name }}</label></div>
                     </div>
                 </form>
             </div>
@@ -60,11 +60,11 @@
                 <form action="#" id="form2">
                     <div class="divider">
                         <label for="email">EMAIL</label><br/><br/>
-                        <input type="email" id="email" name="email" value="{{ user.email }}"/>
+                        <div class="date"><label for="#">{{ user.email }}</label></div>
                     </div>
                     <div class="divider">
                         <label for="last-login">LAST LOGIN</label><br/>
-                        <div id="date"><label for="#">{{ user.last_login }}</label></div>
+                        <div class="date"><label for="#">{{ user.last_login }}</label></div>
                     </div>
                 </form>
             </div>
