@@ -1,65 +1,50 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
-    <title>Signup</title>
-</head>
-<body>
-<main>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="bg-box"></div>
-    <div class="container">
-        <div class="left-container">
-            <img src="{% static 'images/logo.png' %}" alt="">
-        </div>
-        <div class="right-container">
-            <h1>Create an Account</h1><br>
-            <div class="signup-box">
-                <form method="post">
-                    {% csrf_token %}
-                    <input type="text" id="firstname" name="first_name" placeholder="First name" autocomplete="off"
-                           required>&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <input type="text" id="lastname" name="last_name" placeholder="Last name" autocomplete="off"
-                           required><br><br><br>
-                    <input type="email" id="emailid" name="email" placeholder="Email" required autocomplete="off"
-                           style="width: 414px;"><br><br><br>
-                    <input type="password" id="pass" name="password1" placeholder="Password" required autocomplete="off"
-                           style="width: 414px; margin-bottom: 40px;">
-                    <input type="password" id="pass" name="password2" placeholder="Confirm Password" required
-                           autocomplete="off" style="width: 414px;">
-                    <div id="sign-in">
-                        <p>Already have an account?&nbsp;&nbsp;<a id="signin-btn" href="{% url 'login' %}">Sign in</a>
-                        </p>
-                    </div>
-                    {% if form.errors %}
-                        <div class="error_messages">
-                            {% for field in form %}
-                                {% for error in field.errors %}
-                                    <p class="error_message">{{ error }}</p>
-                                {% endfor %}
-                            {% endfor %}
+{% block title %}Sign Up Page | Central Hub{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}"/>
+{% endblock %}
+{% block content %}
+    {% include 'includes/background_boxes.html' %}
+    <main>
+        <div class="container">
+            <div class="left-container">
+                <img src="{% static 'images/logo.png' %}" alt="">
+            </div>
+            <div class="right-container">
+                <h1>Create an Account</h1><br>
+                <div class="signup-box">
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="text" id="firstname" name="first_name" placeholder="First name" autocomplete="off"
+                               required>&emsp;&emsp;&emsp;&emsp;&emsp;
+                        <input type="text" id="lastname" name="last_name" placeholder="Last name" autocomplete="off"
+                               required><br><br><br>
+                        <input type="email" id="emailid" name="email" placeholder="Email" required autocomplete="off"
+                               style="width: 414px;"><br><br><br>
+                        <input type="password" id="pass" name="password1" placeholder="Password" required
+                               autocomplete="off"
+                               style="width: 414px; margin-bottom: 40px;">
+                        <input type="password" id="pass" name="password2" placeholder="Confirm Password" required
+                               autocomplete="off" style="width: 414px;">
+                        <div id="sign-in">
+                            <p>Already have an account?&nbsp;&nbsp;<a id="signin-btn" href="{% url 'login' %}">Sign
+                                in</a>
+                            </p>
                         </div>
-                    {% endif %}
-                    <button id="btn-create">Create Account</button>
-                </form>
+                        {% if form.errors %}
+                            <div class="error_messages">
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <p class="error_message">{{ error }}</p>
+                                    {% endfor %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <button id="btn-create">Create Account</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</main>
-</body>
-</html>
+    </main>
+{% endblock %}

@@ -1,41 +1,23 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}Landing Page | Central Hub{% endblock %}
+{% block head %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{% static 'css/landing_page.css' %}" type='text/css'>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <title>Central Hub</title>
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto+Condensed&display=swap"
+          rel="stylesheet">
+{% endblock %}
 <body>
-    <div class="nav-container">
-        <nav class="navbar">
-            <h1 id="navbar-logo">CentralHub</h1>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-links">Home</a></li>
-                <li><a href="#" class="nav-links">Shop</a></li>
-                <li><a href="#" class="nav-links">About</a></li>
-                <li><a href="#" class="nav-links">Contact</a></li>
-                <li><a href="{% url 'profile' %}" class="nav-links">Profile</a></li>
-            </ul>
-        </nav>
-    </div>
-
+{% block content %}
+{% include 'includes/nav_bar.html' %}
     <div class="main">
         <div class="main-container">
             <div class="main-content">
                 <h1>CentralHub</h1>
                 <p>Your online destination for all things fashion and personal
-                    expression. Style Unveiled: Where Fashion Finds You – Discover Your Signature Look in Every Click, Elevating Your Wardrobe with Elegance and Ease.
+                    expression. Style Unveiled: Where Fashion Finds You – Discover Your Signature Look in Every Click,
+                    Elevating Your Wardrobe with Elegance and Ease.
                 </p>
                 <a href="{% url 'register' %}" class="signup-btn">Get started</a>
             </div>
@@ -44,5 +26,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
 </body>
 </html>
