@@ -225,7 +225,7 @@ main {
     border: 2px solid #F0F1F7;
 }
 
-p{
+.user-value{
     color: #263238;
     font-size: 25px;
     font-weight: bold;
@@ -251,4 +251,38 @@ p{
     background-color: #8D4974;
     border: none;
     cursor: pointer;
+}
+
+.messages{
+    width: 920px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+}
+
+.alert {
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background-color: #2eb886; /* Red */
+}
+
+.alert-error {
+    background-color: #f44336;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
