@@ -225,9 +225,10 @@ main {
     border: 2px solid #F0F1F7;
 }
 
-#date label{
+p{
     color: #263238;
-    margin-top: 30px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .btn-save{
