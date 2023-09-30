@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>My Cart | Central Hub</title>
+		<link
+			rel="stylesheet"
+			href="css/styles.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<header class="h-[80px] fixed w-full drop-shadow-lg bg-white">
+			<div
+				class="container px-2 md:px-36 flex items-center justify-between h-full mx-auto gap-x-8">
+				<h1 class="text-4xl font-bold text-primary-500">Central Hub</h1>
+
+				<nav class="md:flex lg:gap-x-32 gap-x-8 hidden items-center">
+					<a
+						href="/src/index.html"
+						class="text-2xl"
+						>Home</a
+					>
+					<a
+						href="#"
+						class="text-2xl"
+						>About</a
+					>
+					<a
+						href="#"
+						class="text-2xl"
+						>Shop</a
+					>
+					<a
+						href="#"
+						class="text-2xl"
+						>My cart</a
+					>
+				</nav>
+				<a
+					href="#"
+					class="md:flex hidden items-center gap-x-1"
+					>Logout<svg
+						class="w-6 h-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+					</svg>
+				</a>
+
+				<div class="relative md:hidden inline-block text-left">
+					<div>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="2"
+							stroke="currentColor"
+							class="w-8 h-8 cursor-pointer"
+							id="menu-bar">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+						</svg>
+					</div>
+
+					<div
+						id="menu-items"
+						class="absolute divide-y divide-gray-100 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+						role="menu"
+						aria-orientation="vertical"
+						aria-labelledby="menu-button"
+						tabindex="-1"
+						style="display: none">
+						<div
+							class="py-4"
+							role="none">
+							<a
+								href="/src/index.html"
+								class="text-gray-700 block px-4 py-2 text-xl"
+								role="menuitem"
+								tabindex="-1"
+								id="menu-item-0"
+								>Home</a
+							>
+							<a
+								href="#"
+								class="text-gray-700 block px-4 py-2 text-xl"
+								role="menuitem"
+								tabindex="-1"
+								id="menu-item-1"
+								>About</a
+							>
+							<a
+								href="#"
+								class="text-gray-700 block px-4 py-2 text-xl"
+								role="menuitem"
+								tabindex="-1"
+								id="menu-item-2"
+								>Shop</a
+							>
+							<a
+								href="#"
+								class="text-gray-700 block px-4 py-2 text-xl"
+								role="menuitem"
+								tabindex="-1"
+								id="menu-item-2"
+								>My Cart</a
+							>
+						</div>
+
+						<div
+							class="py-1"
+							method="POST"
+							action="#"
+							role="none">
+							<a
+								href="#"
+								class="flex items-center gap-x-1 px-4 text-xl"
+								>Logout<svg
+									class="w-6 h-6"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="currentColor">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+    <div class="h-[80px]"></div>
+
+		<main class="min-h-screen flex">
+			<div class="container mx-auto md:px-36 px-2 py-2 md:py-4">
+				<div class="flex justify-center pb-5 mb-5">
+					<h1 class="text-4xl font-semibold">
+						You Cart (<span class="text-primary-600">1</span> items)
+					</h1>
+				</div>
+
+				<table class="table-fixed w-full">
+					<thead>
+						<tr>
+							<th class="text-left">Item</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th class="text-end">Total</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>
+								<div class="flex">
+									<img
+										src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg"
+										alt="Front of men&#039;s Basic Tee in black."
+										class="h-20 w-20 object-cover object-center" />
+									<div class="flex flex-col">
+										<h1 class="text-xl font-semibold">Pi Pizza Oven T-Shirt</h1>
+										<p
+											class="overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit.
+											Voluptatum, officia! Quidem magnam dignissimos recusandae
+											consequatur nihil sint, quia corrupti, maxime, nobis
+											laborum veritatis! Dolore magni porro sunt. Et, earum
+											laudantium!
+										</p>
+										<h1 class="text-xl font-semibold">
+											Color: <span class="text-semibold">Black</span>
+										</h1>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="flex">
+									<h1 class="my-auto mx-auto font-bold">
+										₱<span class="price">1200</span>
+									</h1>
+								</div>
+							</td>
+							<td>
+								<div class="flex items-center gap-3 justify-center">
+									<button class="border p-2 quanti-dec">-</button>
+									<h1 class="quanti">1</h1>
+									<button class="border p-2 quanti-inc">+</button>
+								</div>
+							</td>
+							<td>
+								<div class="flex items-center gap-3 justify-end">
+									<h1 class="font-bold">₱<span class="total">1200</span></h1>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="flex">
+									<img
+										src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg"
+										alt="Front of men&#039;s Basic Tee in black."
+										class="h-20 w-20 object-cover object-center" />
+									<div class="flex flex-col">
+										<h1 class="text-xl font-semibold">Pi Pizza Oven T-Shirt</h1>
+										<p
+											class="overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit.
+											Voluptatum, officia! Quidem magnam dignissimos recusandae
+											consequatur nihil sint, quia corrupti, maxime, nobis
+											laborum veritatis! Dolore magni porro sunt. Et, earum
+											laudantium!
+										</p>
+										<h1 class="text-xl font-semibold">
+											Color: <span class="text-semibold">Black</span>
+										</h1>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div class="flex">
+									<h1 class="my-auto mx-auto font-bold">
+										₱<span class="price">1200</span>
+									</h1>
+								</div>
+							</td>
+							<td>
+								<div class="flex items-center gap-3 justify-center">
+									<button class="border p-2 quanti-dec">-</button>
+									<h1 class="quanti">1</h1>
+									<button class="border p-2 quanti-inc">+</button>
+								</div>
+							</td>
+							<td>
+								<div class="flex items-center gap-3 justify-end">
+									<h1 class="font-bold">₱<span class="total">1200</span></h1>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot class="border-t-2 border-gray-100">
+						<tr>
+							<td></td>
+							<td></td>
+							<td class="text-end">Shipping Fee</td>
+							<td class="text-end">122</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td class="text-end">Tax Fee</td>
+							<td class="text-end">1224</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td class="text-end">Delivery Fee</td>
+							<td class="text-end">1200</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="text-end font-bold text-2xl py-4">
+								₱<span id="total">0</span>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+
+				<div class="flex justify-end">
+					<button class="px-10 py-4 bg-primary-500 rounded-md text-white">
+						Place Order
+					</button>
+				</div>
+			</div>
+		</main>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>

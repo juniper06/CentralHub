@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+  tbody:after, tbody:before {
+    @apply leading-8 content-['.'] text-white block;
+  }
+  td, th{
+    @apply py-5
+  }
+}
+  
