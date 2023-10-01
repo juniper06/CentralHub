@@ -1,0 +1,106 @@
+{% extends 'online_shopping/base.html' %}
+{% block title %}My Cart | Central hub{% endblock %}
+{% block content %}
+    <div class="h-[80px]"></div>
+
+    <main class="min-h-screen flex">
+        <div class="container mx-auto md:px-36 px-2 py-2 md:py-4">
+            <div class="flex justify-center pb-5 mb-5">
+                <h1 class="text-4xl font-semibold">
+                    You Cart (<span class="text-primary-600">{{ order_item_count }}</span> items)
+                </h1>
+            </div>
+
+            <table class="table-fixed w-full">
+                <thead>
+                <tr>
+                    <th class="text-left">Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th class="text-end">Total</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for item in order_items %}
+                    <tr id="{{ item.id }}">
+                        <td>
+                            <div class="flex">
+                                <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+                                        class="h-20 w-20 object-cover object-center"/>
+                                <div class="flex flex-col">
+                                    <h1 class="text-xl font-semibold">{{ item.product.name }}</h1>
+                                    <p
+                                            class="overflow-hidden max-w-[200px] whitespace-nowrap text-ellipsis">
+                                        {{ item.product.description }}
+                                    </p>
+                                    <h1 class="text-xl font-semibold">
+                                        Categories: {{ item.product.category_list }}
+                                    </h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex">
+                                <h1 class="my-auto mx-auto font-bold">
+                                    ₱<span class="price">{{ item.product.price }}</span>
+                                </h1>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-3 justify-center">
+                                <button class="border p-2 quanti-dec">-</button>
+                                <h1 class="quanti">{{ item.quantity }}</h1>
+                                <button class="border p-2 quanti-inc">+</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex items-center gap-3 justify-end">
+                                <h1 class="font-bold">₱<span class="total">{{ item.sub_total }}</span></h1>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+                </tbody>
+                <tfoot class="border-t-2 border-gray-100">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="text-end">Shipping Fee</td>
+                    <td class="text-end">₱0.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="text-end">Tax Fee</td>
+                    <td class="text-end">₱0.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="text-end">Delivery Fee</td>
+                    <td class="text-end">₱0.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-end font-bold text-2xl py-4">
+                        ₱<span id="total">{{ total_amount }}</span>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+
+            <div class="flex justify-end">
+                <button class="px-10 py-4 bg-primary-500 rounded-md text-white">
+                    Place Order
+                </button>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,138 @@
+<header class="h-[80px] fixed w-full z-10 bg-white">
+    <div
+            class="container px-2 md:px-36 flex items-center justify-between h-full mx-auto gap-x-8">
+        <h1 class="text-4xl font-bold text-primary-500">Central Hub</h1>
+
+        <nav class="md:flex lg:gap-x-32 gap-x-8 hidden items-center">
+            <a
+                    href="{% url 'home' %}"
+                    class="text-2xl"
+            >Home</a
+            >
+            <a
+                    href="{% url 'profile' %}"
+                    class="text-2xl"
+            >Profile</a
+            >
+            <a
+                    href="#shop"
+                    class="text-2xl"
+            >Shop</a
+            >
+        </nav>
+        <div class="flex gap-x-8">
+            <a
+                    href="{% url 'cart' %}"
+                    class="text-2xl shopping-cart"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path>
+                </svg>
+            </a
+            >
+            <a
+                    href="{% url 'logout' %}"
+                    class="md:flex hidden items-center gap-x-1"
+            >Logout
+                <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor">
+                    <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+                </svg>
+            </a>
+        </div>
+
+
+        <div class="relative md:hidden inline-block text-left">
+            <div>
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        class="w-8 h-8 cursor-pointer"
+                        id="menu-bar">
+                    <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                </svg>
+            </div>
+
+            <div
+                    id="menu-items"
+                    class="absolute divide-y divide-gray-100 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="menu-button"
+                    tabindex="-1"
+                    style="display: none">
+                <div
+                        class="py-4"
+                        role="none">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <a
+                            href="#"
+                            class="text-gray-700 block px-4 py-2 text-xl"
+                            role="menuitem"
+                            tabindex="-1"
+                            id="menu-item-0"
+                    >Home</a
+                    >
+                    <a
+                            href="{% url 'profile' %}"
+                            class="text-gray-700 block px-4 py-2 text-xl"
+                            role="menuitem"
+                            tabindex="-1"
+                            id="menu-item-1"
+                    >Profile</a
+                    >
+                    <a
+                            href="#shop"
+                            class="text-gray-700 block px-4 py-2 text-xl"
+                            role="menuitem"
+                            tabindex="-1"
+                            id="menu-item-2"
+                    >Shop</a>
+                </div>
+
+                <div class="py-1">
+                    <a
+                            href="#"
+                            class="text-gray-700 block px-4 py-2 text-xl"
+                            role="menuitem"
+                            tabindex="-1"
+                            id="menu-item-2"
+                    >My Cart
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                             stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path>
+                        </svg>
+                    </a>
+                    <a href="{% url 'logout' %}" class="flex items-center gap-x-1 px-4 text-xl">
+                        Logout
+                        <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

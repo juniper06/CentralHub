@@ -5,14 +5,14 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 from accounts.forms import UserCreationForm
-
+from django.db.models import Count
 
 # Create your views here.
 
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect("landing_page")
+        return redirect("home")
     context = {"error_messages": []}
     if request.method == "POST":
         email = request.POST["email"]
@@ -21,7 +21,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Successfully logged In")
-            return HttpResponseRedirect(request.GET.get('next', '/profile'))
+            return HttpResponseRedirect(request.GET.get('next', ''))
         else:
             context["error_messages"] = ["Invalid Username or Passwords"]
 
