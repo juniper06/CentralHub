@@ -47,3 +47,14 @@ def add_to_cart(request, product_id):
     except IntegrityError:
         return HttpResponse("Product ID Not Found!")
 
+
+@login_required
+def product_details(request, slug):
+    try:
+        product = Product.objects.filter(slug=slug).first()
+        context = {
+            "product": product
+        }
+        return render(request, "online_shopping/product.html", context=context)
+    except IntegrityError:
+        return HttpResponse("Product Not Found!")

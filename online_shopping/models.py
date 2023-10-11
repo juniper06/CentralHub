@@ -1,5 +1,6 @@
 from django.core.validators import MinValueValidator
 from django.db import models
+from django.utils.text import slugify
 
 from accounts.models import User
 
@@ -19,9 +20,16 @@ class Product(models.Model):
     price = models.FloatField()
     sold = models.BooleanField(default=False)
     categories = models.ManyToManyField(Category)
+    image = models.ImageField(upload_to='images/', default='images/no-image.png')
+    slug = models.SlugField(blank=True)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name + str(self.id))
+        super().save(*args, **kwargs)
 
     @property
     def category_list(self):
