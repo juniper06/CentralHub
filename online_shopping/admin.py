@@ -4,23 +4,21 @@ from . import models
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'price', 'category_list', 'sold']
-    list_filter = ['sold', 'categories']
+    list_display = ['name', 'price', 'category']
+    list_filter = ['category']
     fieldsets = [
         (None, {
             'fields': [
                 'name',
                 'description',
                 'price',
-                'sold',
-                'categories',
+                'category',
                 'image'
 
             ],
 
         }),
     ]
-    filter_horizontal = ['categories']
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -42,8 +40,12 @@ class OrderItemAdmin(admin.ModelAdmin):
     list_display = ["user", "product", "quantity"]
 
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ["id", "name"]
+
+
 # Register your models here.
 admin.site.register(models.OrderItem, OrderItemAdmin)
 admin.site.register(models.Order, OrderAdmin)
 admin.site.register(models.Product, ProductAdmin)
-admin.site.register(models.Category)
+admin.site.register(models.Category, CategoryAdmin)

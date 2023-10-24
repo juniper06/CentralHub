@@ -1,0 +1,16 @@
+<!-- SideBar -->
+<aside class="z-2">
+    <h2 class="py-5">Central Hub</h2>
+    <ul class="side-nav">
+        <li class="side-nav-item {% if request.path == "/dashboard/" %} active {% endif %}">
+            <a href="{% url 'overview' %}"><i class="fa-solid fa-chart-line"></i> Overview</a>
+        </li>
+        <li class="side-nav-item {% if request.path == "/dashboard/product" %} active {% endif %}">
+            <a href="{% url 'product' %}"><i class="fa-solid fa-table-list"></i> Product</a>
+        </li>
+        <li class="side-nav-item {% if request.path == "/dashboard/category" %} active {% endif %}">
+            <a href="{% url 'category' %}"><i class="fa-solid fa-list-ol"></i> Category</a>
+        </li>
+    </ul>
+</aside>
+<!-- End of SideBar -->

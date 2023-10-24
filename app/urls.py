@@ -25,6 +25,7 @@ urlpatterns = [
     path('landing_page', views.index, name="landing_page"),
     path('', include("accounts.urls")),
     path('', include("online_shopping.urls")),
+    path('dashboard/', include("dashboard.urls")),
 ]
 
 if settings.DEBUG:

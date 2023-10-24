@@ -1,0 +1,60 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+    <!-- Header -->
+    <header class="container-fluid">
+        <div
+                class="d-flex justify-content-between align-items-center px-5 py-3">
+            <h1 class="text-header">Overview</h1>
+
+            {% include 'dashboard/components/account.html' %}
+        </div>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Content -->
+    <div class="container p-5">
+        <div class="row gy-4">
+
+            <!-- Total Sales -->
+            <div class="col-lg-6">
+                <div class="card text-white" id="total-sales">
+                    <div class="card-body">
+                        <div class="card-title">Total Sales</div>
+                        <h3><i class="fa-solid fa-peso-sign display-6 pe-2"></i>{{ total_sales }}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Users -->
+            <div class="col-lg-6">
+                <div class="card text-white" id="total-users">
+                    <div class="card-body">
+                        <div class="card-title">Total User</div>
+                        <h3><i class="fa-solid fa-users display-6 pe-2"></i>{{ total_users }}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Products -->
+            <div class="col-lg-6">
+                <div class="card text-white" id="total-products">
+                    <div class="card-body">
+                        <div class="card-title">Total Products</div>
+                        <h3><i class="fa-solid fa-shirt display-6 pe-2"></i>{{ total_products }}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Ordered -->
+            <div class="col-lg-6">
+                <div class="card text-white" id="total-ordered">
+                    <div class="card-body">
+                        <div class="card-title">Total Ordered</div>
+                        <h3><i class="fa-solid fa-truck-ramp-box display-6 pe-2"></i>{{ total_ordered }}</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

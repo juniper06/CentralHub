@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link
+            rel="stylesheet"
+            href="{% static 'css/bootstrap.min.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="{% static 'css/dashboard.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="{% static 'css/fontawesome/fontawesome.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="{% static 'css/fontawesome/brands.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="{% static 'css/fontawesome/solid.css' %}"/>
+</head>
+<body>
+{% include 'dashboard/components/sidebar.html' %}
+
+<!-- Main Content -->
+<main class="position-relative">
+    {% include 'includes/messages.html' %}
+    {% block content %}
+    {% endblock %}
+</main>
+<!-- End Main Content -->
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

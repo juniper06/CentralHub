@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from accounts.models import User
-from online_shopping.models import Product, Cart, CartItem, Category
+from online_shopping.models import Product, OrderItem, Category
 
 
 # Create your tests here.
@@ -36,8 +36,8 @@ class OnlineShoppingTestCase(TestCase):
 
         self.assertEqual(earlfunk21.cart, cart)
 
-        CartItem.objects.create(cart=cart, product=product1, quantity=1)
-        CartItem.objects.create(cart=cart, product=product2, quantity=2)
+        OrderItem.objects.create(cart=cart, product=product1, quantity=1)
+        OrderItem.objects.create(cart=cart, product=product2, quantity=2)
 
         cart_items = cart.cartitem_set.all()
 

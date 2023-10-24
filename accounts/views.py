@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.urls import reverse
 
 from accounts.forms import UserCreationForm
 from django.db.models import Count
@@ -21,7 +22,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Successfully logged In")
-            return HttpResponseRedirect(request.GET.get('next', ''))
+            return HttpResponseRedirect(request.GET.get('next', reverse('home')))
         else:
             context["error_messages"] = ["Invalid Username or Passwords"]
 

@@ -1,0 +1,92 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+    <!-- Header -->
+    <header class="container-fluid">
+        <div
+                class="d-flex justify-content-between align-items-center px-5 py-3">
+            <h1 class="text-header">Product</h1>
+            {% include 'dashboard/components/account.html' %}
+        </div>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Content -->
+    <div class="container p-5 row mx-auto">
+
+        <div class="table-responsive col-md-6">
+            <table class="table caption-top table-hover align-middle">
+                <caption>
+                    <div class="d-flex justify-content-between">
+                        <h5>List of Category</h5>
+                    </div>
+                </caption>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for category in page %}
+                    <tr>
+                        <td>{{ category.id }}</td>
+                        <td>{{ category.name }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+
+                    <li class="page-item {% if not page.has_previous %}disabled{% endif %}">
+                        <a
+                                class="page-link"
+                                href="?page={% if page.has_previous %}{{ page.previous_page_number }}{% endif %}"
+                        >Previous</a
+                        >
+                    </li>
+                    <li class="page-item">
+                        <a
+                                class="page-link"
+                                href="#"
+                        >{{ page.number }}</a
+                        >
+                    </li>
+                    <li class="page-item {% if not page.has_next %}disabled{% endif %}">
+                        <a
+                                class="page-link"
+                                href="?page={% if page.has_next %}{{ page.next_page_number }}{% endif %}"
+                        >Next</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mb-4 col-md-6">
+            <form method="post" class="card ">
+                {% csrf_token %}
+                <div class="card-body row">
+                    <div class="mb-3 col-12">
+                        <label
+                                for="name"
+                                class="form-label"
+                        >Category Name</label
+                        >
+                        <input
+                                required
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="name"
+                                autocomplete="off"
+                                placeholder="T-Shirt"/>
+                    </div>
+
+                    <div class="mb-3 justify-content-end row">
+                        <button class="btn btn-add-product text-white col-md-2 py-2" type="submit">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

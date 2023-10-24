@@ -1,0 +1,126 @@
+
+:root{
+  --primary: #c54b8b;
+  --active-primary: #d16fa2;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+aside{
+  width: 250px;
+  height: 100vh;
+  background-color: var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+main{
+  min-height: 100vh;
+  padding: 0 0 0 250px;
+}
+
+.side-nav{
+  width: 100%;
+}
+
+.side-nav-item{
+  padding: 10px 5px;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #e4cdd9;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+}
+
+.side-nav-item:hover{
+  background-color: var(--active-primary);
+  transition: background-color 0.5s ease;
+}
+
+.side-nav .active{
+  background-color: var(--active-primary);
+  color: white;
+}
+
+.text-header{
+  font-weight: 700;
+  color: var(--active-primary);
+}
+
+#profile-icon{
+  color: var(--primary);
+}
+
+#dropdown-profile{
+  font-size: 1.5em;
+}
+
+#total-sales{
+  background-color: #4976e7;
+}
+
+#total-users{
+  background-color: #eb5f7d;
+}
+
+#total-products{
+  background-color: #9e71ce;
+}
+
+#total-ordered{
+  background-color: #85d1b3;
+}
+
+.form-control:focus{
+  border-color: var(--primary);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--primary);
+}
+
+.btn-add-product:hover{
+  background-color: var(--active-primary);
+  border-color: var(--active-primary);
+}
+
+.btn-add-product{
+  color: white;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.messages{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+    padding: 0 0 0 250px;
+    z-index: 1;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}

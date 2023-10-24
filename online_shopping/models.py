@@ -17,10 +17,10 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
-    price = models.FloatField()
-    sold = models.BooleanField(default=False)
-    categories = models.ManyToManyField(Category)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='images/', default='images/no-image.png')
+    created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(blank=True)
 
     def __str__(self):
@@ -30,10 +30,6 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.name + str(self.id))
         super().save(*args, **kwargs)
-
-    @property
-    def category_list(self):
-        return ', '.join([category.name for category in self.categories.all()])
 
 
 class OrderItemManager(models.Manager):
