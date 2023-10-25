@@ -1,10 +1,11 @@
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.db import IntegrityError
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from online_shopping.models import Product, OrderItem
+from online_shopping.models import Product, OrderItem, Category
 
 
 # Create your views here.
@@ -21,8 +22,9 @@ def home(request):
 
 @login_required
 def cart(request):
-    order_item_count = OrderItem.objects.not_placed_orders().filter(user=request.user).aggregate(order_item_count=Count('id'))[
-        'order_item_count']
+    order_item_count = \
+        OrderItem.objects.not_placed_orders().filter(user=request.user).aggregate(order_item_count=Count('id'))[
+            'order_item_count']
 
     order_items = OrderItem.objects.not_placed_orders().filter(user=request.user)
     total_amount = sum(order_item.sub_total for order_item in order_items)
@@ -58,3 +60,26 @@ def product_details(request, slug):
         return render(request, "online_shopping/product.html", context=context)
     except IntegrityError:
         return HttpResponse("Product Not Found!")
+
+
+@login_required
+def shop_view(request):
+    search = request.GET.get('search', '')
+    category = request.GET.get("category", None)
+    if category is not None:
+        products = Product.objects.filter(category__name=category).all()
+    else:
+        products = Product.objects.all().filter(
+            Q(name__icontains=search) |
+            Q(description__icontains=search) |
+            Q(category__name__icontains=search)).order_by(
+            "-created_at")
+    paginator = Paginator(products, 10)
+    page_number = request.GET.get('page', 1)
+    page = paginator.page(page_number)
+    categories = Category.objects.all()
+    context = {
+        'page': page,
+        'categories': categories,
+    }
+    return render(request, "online_shopping/shop.html", context)

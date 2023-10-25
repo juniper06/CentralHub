@@ -1,0 +1,109 @@
+{% extends 'online_shopping/base.html' %}
+{% block title %}My Cart | Central hub{% endblock %}
+{% block content %}
+
+    <main class="min-h-screen flex p-[80px] flex-col">
+        <div class="container mx-auto md:px-36 px-2 py-2 md:py-4">
+            <h3 class="text-4xl font-bold mb-5">Shopping Page</h3>
+            <div class="flex gap-x-3">
+                <div class="flex flex-col gap-y-3">
+                    <form class="pt-2 relative mx-auto text-gray-600" method="GET">
+                        <input
+                                class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                                type="text"
+                                name="search"
+                                placeholder="Search"/>
+                        <button
+                                type="submit"
+                                class="absolute right-0 top-0 mt-5 mr-4">
+                            <svg
+                                    class="text-gray-600 h-4 w-4 fill-current"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    version="1.1"
+                                    id="Capa_1"
+                                    x="0px"
+                                    y="0px"
+                                    viewBox="0 0 56.966 56.966"
+                                    style="enable-background: new 0 0 56.966 56.966"
+                                    xml:space="preserve"
+                                    width="512px"
+                                    height="512px">
+									<path
+                                            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+								</svg>
+                        </button>
+                    </form>
+                    <ul class="divide-y">
+
+                        <li class="font-semibold py-3">
+                            <a href="{% url 'shop' %}">all</a>
+                        </li>
+                        {% for category in categories %}
+                            <li class="font-semibold py-3">
+                                <a href="{% url 'shop' %}?category={{ category }}">{{ category }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-y-6">
+                    <div
+                            class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10">
+                        {% for product in page %}
+                            <div class="group relative cursor-pointer">
+                                <a href="{% url 'product' slug=product.slug %} ">
+                                    <div
+                                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80 group-hover:opacity-75">
+                                        <img
+                                                src="{{ product.image.url }}"
+                                                alt="Front of men&#039;s Basic Tee in black."
+                                                class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
+                                    </div>
+                                    <div class="mt-4 flex justify-between">
+                                        <div>
+                                            <h3 class="text-sm text-gray-700">
+                                                {{ product.name }}
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-500">{{ product.category_list }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-bold text-gray-900 text-end">{{ product.price }}</p>
+                                            <button class="px-2 py-2 bg-primary-500 rounded-md text-white hover:bg-primary-700">
+                                                <a href="{% url 'add_to_cart' product_id=product.id %}">Add to cart</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                    <ul class="flex list-style-none">
+                        {% if page.has_previous %}
+                            <li class="page-item"><a
+                                    class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                    href="#">Previous</a></li>
+                        {% else %}
+                            <li class="page-item disabled"><a
+                                    class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
+                                    href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                        {% endif %}
+                        <li class="page-item active"><a
+                                class="page-link relative block py-1.5 px-3 rounded border-0 bg-primary-600 outline-none transition-all duration-300 rounded text-white hover:text-white hover:bg-primary-700 shadow-md focus:shadow-md"
+                                href="#">{{ page.number }} <span class="visually-hidden"></span></a></li>
+
+                        {% if page.has_next %}
+                            <li class="page-item"><a
+                                    class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                                    href="#">Next</a></li>
+                        {% else %}
+                            <li class="page-item disabled"><a
+                                    class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-500 pointer-events-none focus:shadow-none"
+                                    href="#" tabindex="-1" aria-disabled="true">Next</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
