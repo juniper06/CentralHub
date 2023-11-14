@@ -82,3 +82,28 @@ def category_view(request):
         'page': page,
     }
     return render(request, "dashboard/category.html", context)
+
+
+@user_passes_test(is_staff)
+def orders_view(request):
+    search = request.GET.get('search', '')
+    orders = Order.objects.all().filter(
+        Q(status__icontains=search) |
+        Q(user__email__icontains=search)).order_by(
+        "-date_ordered")
+    paginator = Paginator(orders, 10)
+    page_number = request.GET.get('page', 1)
+    page = paginator.page(page_number)
+    context = {
+        'page': page,
+    }
+    return render(request, "dashboard/orders.html", context)
+
+
+@user_passes_test(is_staff)
+def update_status(request, order_id):
+    status = request.GET.get('status')
+    order = get_object_or_404(Order, id=order_id)
+    order.update_status(status)
+    messages.success(request, "Successfully Updated")
+    return redirect("orders")

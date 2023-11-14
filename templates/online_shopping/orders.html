@@ -1,0 +1,47 @@
+{% extends 'online_shopping/base.html' %}
+{% block title %}My Cart | Central hub{% endblock %}
+{% block content %}
+    <main class="min-h-screen flex p-[80px]">
+        <div class="container mx-auto md:px-36 px-2 py-2 md:py-4">
+            <div class="flex justify-center pb-5 mb-5">
+                <h1 class="text-4xl font-semibold">
+                    Your Orders
+                </h1>
+            </div>
+
+            <table class="table-fixed w-full">
+                <thead>
+                <tr>
+                    <th>ORDER ID</th>
+                    <th>DATE ORDERED</th>
+                    <th>TOTAL</th>
+                    <th>STATUS</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for order in orders %}
+                    <tr id="{{ order.id }}">
+                        <td class="text-center">
+                            {{ order.id }}
+                        </td>
+                        <td class="text-center">
+                            {{ order.date_ordered }}
+                        </td>
+                        <td class="text-center">
+                            {{ order.total_amount }}
+                        </td>
+                        <td class="text-center">
+                            {{ order.status }}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+                </tbody>
+
+            </table>
+        </div>
+    </main>
+
+{% endblock %}

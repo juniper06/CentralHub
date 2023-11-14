@@ -9,6 +9,11 @@
                 </h1>
             </div>
 
+            <div class="flex justify-end">
+                <a class="px-10 py-4 bg-primary-500 rounded-md text-white cursor-pointer" href="{% url 'orders' %}">My Orders</a>
+            </div>
+
+
             <table class="table-fixed w-full">
                 <thead>
                 <tr>
@@ -94,9 +99,9 @@
             </table>
 
             <div class="flex justify-end">
-                <button class="px-10 py-4 bg-primary-500 rounded-md text-white">
+                <a class="px-10 py-4 bg-primary-500 rounded-md text-white" href="{% url 'place_order' %}">
                     Place Order
-                </button>
+                </a>
             </div>
         </div>
     </main>

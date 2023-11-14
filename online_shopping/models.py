@@ -8,6 +8,7 @@ from accounts.models import User
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "categories"
+
     name = models.CharField(max_length=80)
 
     def __str__(self):
@@ -57,9 +58,23 @@ class Order(models.Model):
     items = models.ManyToManyField(OrderItem)
     date_ordered = models.DateTimeField(auto_now_add=True)
 
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('delivered', 'Delivered'),
+        ('cancelled', 'Cancelled'),
+    ]
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="pending")
+
     def __str__(self):
         return self.user.get_username()
 
     @property
     def total_amount(self):
         return self.items.aggregate(total=models.Sum(models.F('quantity') * models.F('product__price')))['total'] or 0
+
+    def update_status(self, new_status):
+        if new_status in dict(self.STATUS_CHOICES):
+            self.status = new_status
+            self.save()
+        else:
+            raise ValueError(f"Invalid status: {new_status}")

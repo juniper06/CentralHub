@@ -5,7 +5,7 @@ from django.db.models import Count, Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from online_shopping.models import Product, OrderItem, Category
+from online_shopping.models import Product, OrderItem, Category, Order
 
 
 # Create your views here.
@@ -83,3 +83,22 @@ def shop_view(request):
         'categories': categories,
     }
     return render(request, "online_shopping/shop.html", context)
+
+
+@login_required
+def place_order(request):
+    new_order = Order.objects.create(user=request.user)
+    user_cart_items = OrderItem.objects.not_placed_orders().filter(user=request.user).all()
+    new_order.items.set(user_cart_items)
+    user_cart_items.delete()
+    new_order.save()
+    return redirect("cart")
+
+
+@login_required
+def orders_view(request):
+    orders = Order.objects.filter(user=request.user)
+    context = {
+        "orders": orders
+    }
+    return render(request, "online_shopping/orders.html", context)

@@ -1,0 +1,101 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+    <!-- Header -->
+    <header class="container-fluid">
+        <div
+                class="d-flex justify-content-between align-items-center px-5 py-3">
+            <h1 class="text-header">Product</h1>
+
+            {% include 'dashboard/components/account.html' %}
+        </div>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Content -->
+    <div class="container p-5">
+
+        <div class="table-responsive">
+            <table class="table caption-top table-hover align-middle">
+                <caption>
+                    <div class="d-flex justify-content-between">
+                        <h5>List of Orders</h5>
+                        <form class="d-flex">
+                            <input
+                                    type="text"
+                                    placeholder="Search"
+                                    class="form-control"
+                                    name="search"/>
+                            <button class="btn btn-secondary" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                </caption>
+                <thead>
+                <tr>
+                    <th>ORDER ID</th>
+                    <th>USER</th>
+                    <th>DATE ORDERED</th>
+                    <th>TOTAL</th>
+                    <th>STATUS</th>
+                    <th class="text-center">ACTION</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for order in page %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.user }}</td>
+                        <td>{{ order.date_ordered }}</td>
+                        <td>{{ order.total_amount }}</td>
+                        <td>{{ order.status }}</td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-info"
+                               href="{% url 'update_status' order_id=order.id %}?status=pending">
+                                <i class="fa-solid fa-arrows-spin"></i>
+                            </a>
+                            <a class="btn btn-outline-danger"
+                               href="{% url 'update_status' order_id=order.id %}?status=cancelled">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                            <a class="btn btn-outline-success"
+                               href="{% url 'update_status' order_id=order.id %}?status=delivered">
+                                <i class="fa-solid fa-check"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+
+
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+
+                    <li class="page-item {% if not page.has_previous %}disabled{% endif %}">
+                        <a
+                                class="page-link"
+                                href="?page={% if page.has_previous %}{{ page.previous_page_number }}{% endif %}"
+                        >Previous</a
+                        >
+                    </li>
+                    <li class="page-item">
+                        <a
+                                class="page-link"
+                                href="#"
+                        >{{ page.number }}</a
+                        >
+                    </li>
+                    <li class="page-item {% if not page.has_next %}disabled{% endif %}">
+                        <a
+                                class="page-link"
+                                href="?page={% if page.has_next %}{{ page.next_page_number }}{% endif %}"
+                        >Next</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock %}

@@ -10,6 +10,8 @@
         </li>
         <li class="side-nav-item {% if request.path == "/dashboard/category" %} active {% endif %}">
             <a href="{% url 'category' %}"><i class="fa-solid fa-list-ol"></i> Category</a>
+        </li><li class="side-nav-item {% if request.path == "/dashboard/orders" %} active {% endif %}">
+            <a href="{% url 'orders' %}"><i class="fa-solid fa-list-check"></i> Orders</a>
         </li>
     </ul>
 </aside>
